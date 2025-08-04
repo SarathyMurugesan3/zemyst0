@@ -39,10 +39,10 @@
     <section id="home" class="hero-section">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-lg-8 col-md-10">
+                <div class="col-lg-12 col-md-10">
                     <div class="hero-content">
                         <h1 class="hero-title">
-                            Circular Material<br>Solutions
+                            Circular Material Solutions
                         </h1>
                         <p class="hero-subtitle">
                             UNLOCK SMART, SUSTAINABLE MATERIAL INNOVATION WITH ZEMYST
@@ -81,12 +81,135 @@
         <div class="about-intro-bg"></div>
     </section>
 
-    <section id="solution" class="products-section">
+<section id="solution" class="products-section">
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <div class="section-label">OUR PRODUCT</div>
-                    <h2 class="flip-on-scroll section-title">Sustainable Materials, Infinite Possibilities</h2>
+                    <div class="section-label">OUR PRODUCTS</div>
+                    <h2 class="section-title">Sustainable Materials, Infinite Possibilities</h2>
+                </div>
+            </div>
+            
+            <div class="row" id="product-grid">
+                <!-- Product 1 -->
+                <div class="col-lg-4 col-md-6 col-sm-12 product-item" data-index="0">
+                    <div class="product-card">
+                        <div class="product-image" style="background-image: url('images/p1.png');"></div>
+                        <div class="product-content">
+                            <h3 class="product-title">Reimagining the End of Packaging: From Waste to Worth</h3>
+                            <div class="product-description">
+                                <div class="description-text">
+Packaging is everywhere. From food to consumer goods, it plays a vital role in protecting and delivering products. But traditionally, packaging ends its journey as waste, contributing to overflowing landfills and pollution.
+At Zemyst, we are reimagining what happens after packaging has served its purpose. Inspired by nature’s cycles, we focus on materials designed to safely return to the earth, leaving behind no harm. The goal is simple: create packaging that nourishes instead of pollutes.
+By viewing packaging as part of a regenerative cycle, we unlock solutions that not only reduce waste but also support ecosystems. The future of packaging is not disposable - it’s purposeful.                                </div>
+                                <button class="read-more-btn">Read More</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="col-lg-4 col-md-6 col-sm-12 product-item" data-index="1">
+                    <div class="product-card">
+                        <div class="product-image" style="background-image: url('images/p2.png');"></div>
+                        <div class="product-content">
+                            <h3 class="product-title">Performance Meets Responsibility: Why We Believe Sustainability Shouldn’t Be a Trade-Off </h3>
+                            <div class="product-description">
+                                <div class="description-text">
+There’s a common belief that sustainability means compromising on performance. But at Zemyst, we think differently. We are building packaging solutions that offer strength, durability, and reliability - without the environmental burden. 
+By designing at the intersection of technology and nature, our materials are engineered for high performance while supporting a circular economy. Businesses no longer need to choose between protecting their products and protecting the planet. 
+Sustainability and performance can, and must, coexist. Our work is proof that responsible choices don’t have to come with trade-offs—they can define the standard for the future. 
+                                </div>
+                                <button class="read-more-btn">Read More</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="col-lg-4 col-md-6 col-sm-12 product-item" data-index="2">
+                    <div class="product-card">
+                        <div class="product-image" style="background-image: url('images/p3.png');"></div>
+                        <div class="product-content">
+                            <h3 class="product-title">From Idea to Impact: The Journey to a Greener Material Future </h3>
+                            <div class="product-description">
+                                <div class="description-text">
+Every big change starts with a question. For us, it was: Can we create materials that perform like plastics but don’t harm the planet? That question sparked our innovation journey. 
+We studied natural systems, experimented with new approaches, and learned from each failure and success. Today, our focus is on scalable, sustainable materials that can transform packaging into a regenerative process rather than a wasteful one. 
+This journey is still unfolding, but every step brings us closer to a future where packaging works with nature, not against it. 
+                                </div>
+                                <button class="read-more-btn">Read More</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 4 - Hidden initially -->
+                <div class="col-lg-4 col-md-6 col-sm-12 product-item hidden" data-index="3">
+                    <div class="product-card">
+                        <div class="product-image" style="background-image: url('images/p4.png');"></div>
+                        <div class="product-content">
+                            <h3 class="product-title">The Hidden Cost of Plastics: What We Don’t See Every Day </h3>
+                            <div class="product-description">
+                                <div class="description-text">
+Plastic is convenient, affordable, and everywhere - but its hidden costs are staggering. Microplastics have entered our food, water, and even our bodies. Wildlife mistake plastic for food, and ecosystems suffer from long-lasting damage. 
+These costs aren’t included in the price tag we pay as consumers. They are borne by the environment and future generations. 
+At Zemyst, we believe innovation must start at the source: creating materials designed to prevent pollution before it happens. The future of packaging must eliminate hidden costs and create visible benefits. 
+                                </div>
+                                <button class="read-more-btn">Read More</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <button class="view-toggle-btn" id="viewToggleBtn">
+                <span id="btnText">Show More</span>
+                <i class="fas fa-chevron-down btn-icon" id="btnIcon"></i>
+            </button>
+            <div class="insights-divider">
+                <hr class="custom-hr">
+            </div>
+            
+            <div class="insights-section">
+                <h3 class="insights-title">Explore Our Insights</h3>
+                <p class="insights-subtitle">Discover how we're reimagining materials for a sustainable future</p>
+                <button class="insights-btn" id="viewInsightsBtn">
+                    <span>View All Insights</span>
+                    <i class="fas fa-arrow-right btn-arrow"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+    <!-- blog sections -->
+     <section id="blogs" class="blogs-section" style="display: none;">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-header">
+                        <button class="back-btn" id="backToProducts">
+                            <i class="fas fa-arrow-left"></i>
+                            <span>Back to Products</span>
+                        </button>
+                        <div class="section-label">OUR INSIGHTS</div>
+                        <h2 class="section-title">Thoughts & Innovations</h2>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <!-- Blog Post 1 -->
+                <div class="col-lg-4 col-md-6 col-sm-12 blog-item">
+                    <div class="product-card blog-card">
+                        <!-- <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div> -->
+                        <div class="product-content">
+                            <h3 class="product-title">Circular Thinking: How Nature Inspires the Future of Packaging</h3>
+                            <div class="product-description">
+                                <div class="description-text">
+                                    Nature knows no waste - everything is transformed into something valuable. At Zemyst, we take inspiration from these natural cycles to design packaging materials that are regenerative and safe. Our goal is to close the loop by creating solutions that either return safely to nature or are efficiently reused. By following nature's principles, we can design packaging that supports both people and the planet. The future of packaging isn't linear - it's circular. And the time to embrace this shift is now.
+                                </div>
+                                <button class="read-more-btn">Read More</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -123,7 +246,7 @@
             </div>
         </div>
     </section>
-
+    <div style="height: 600px; background: url('images/image.png') no-repeat center bottom; background-size: cover;"></div>
     <!-- Newsletter Section -->
     <section class="newsletter-section" id="contact">
         <div class="container">
@@ -205,6 +328,128 @@
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize read more functionality
+            initializeReadMore();
+            
+            // Original show/hide products functionality
+            const viewToggleBtn = document.getElementById('viewToggleBtn');
+            const btnText = document.getElementById('btnText');
+            const btnIcon = document.getElementById('btnIcon');
+            const hiddenProducts = document.querySelectorAll('.product-item.hidden');
+           
+            let isExpanded = false;
+            viewToggleBtn.addEventListener('click', function() {
+                if (!isExpanded) {
+                    // Show more products
+                    hiddenProducts.forEach((product, index) => {
+                        setTimeout(() => {
+                            product.classList.remove('hidden');
+                            product.classList.add('showing');
+                        }, index * 100); // Staggered animation
+                    });
+                   
+                    btnText.textContent = 'Show Less';
+                    btnIcon.classList.remove('fa-chevron-down');
+                    btnIcon.classList.add('fa-chevron-up');
+                    viewToggleBtn.classList.add('show-less');
+                    isExpanded = true;
+                   
+                } else {
+                    // Hide products
+                    hiddenProducts.forEach((product, index) => {
+                        setTimeout(() => {
+                            product.classList.add('hidden');
+                            product.classList.remove('showing');
+                        }, index * 50);
+                    });
+                   
+                    btnText.textContent = 'Show More';
+                    btnIcon.classList.remove('fa-chevron-up');
+                    btnIcon.classList.add('fa-chevron-down');
+                    viewToggleBtn.classList.remove('show-less');
+                    isExpanded = false;
+                   
+                    // Scroll to products section
+                    setTimeout(() => {
+                        document.getElementById('solution').scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }, 200);
+                }
+            });
+
+            // Insights navigation functionality
+            const viewInsightsBtn = document.getElementById('viewInsightsBtn');
+            const backToProductsBtn = document.getElementById('backToProducts');
+            const productsSection = document.getElementById('solution');
+            const blogsSection = document.getElementById('blogs');
+
+            viewInsightsBtn.addEventListener('click', function() {
+                productsSection.style.display = 'none';
+                blogsSection.style.display = 'block';
+                
+                // Reinitialize read more for blog posts
+                setTimeout(() => {
+                    initializeReadMoreForBlogs();
+                }, 100);
+                
+                // Scroll to top of blogs section
+                blogsSection.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            });
+
+            backToProductsBtn.addEventListener('click', function() {
+                blogsSection.style.display = 'none';
+                productsSection.style.display = 'block';
+                
+                // Scroll to products section
+                productsSection.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            });
+        });
+
+        function initializeReadMore(sectionSelector = '') {
+    // sectionSelector: '' means whole page, or use '.blog-card' etc.
+    const selector = sectionSelector ? `${sectionSelector} .description-text` : '.description-text';
+    document.querySelectorAll(selector).forEach(description => {
+        const fullText = description.textContent.trim();
+        const words = fullText.split(/\s+/);
+        const maxWords = 25;
+        const container = description.parentNode;
+        const btn = container.querySelector('.read-more-btn');
+        if (!btn) return;
+
+        // Truncate
+        const truncatedText = words.slice(0, maxWords).join(' ') + '...';
+        description.textContent = truncatedText;
+        description.dataset.fullText = fullText;
+        description.dataset.truncatedText = truncatedText;
+        description.dataset.expanded = 'false';
+        btn.textContent = 'Read More';
+
+        // Remove previous click
+        btn.onclick = null;
+        btn.addEventListener('click', function () {
+            const isExpanded = description.dataset.expanded === 'true';
+            if (isExpanded) {
+                description.textContent = description.dataset.truncatedText;
+                btn.textContent = 'Read More';
+                description.dataset.expanded = 'false';
+            } else {
+                description.textContent = description.dataset.fullText;
+                btn.textContent = 'Read Less';
+                description.dataset.expanded = 'true';
+            }
+        });
+    });
+}
+
         function toggleRotateOnScroll() {
             const elements = document.querySelectorAll('.rotate-on-scroll');
 
