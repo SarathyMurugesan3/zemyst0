@@ -330,7 +330,15 @@ At Zemyst, we believe innovation must start at the source: creating materials de
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
     <script>
-emailjs.init('ImTgCeJpcueZu29Ga');
+
+        emailjs.init({
+    publicKey: 'ImTgCeJpcueZu29Ga', 
+    blockHeadless: true,
+    limitRate: {
+        id: 'app',
+        throttle: 10000,
+    },
+});
 
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize read more functionality
@@ -345,6 +353,12 @@ document.addEventListener('DOMContentLoaded', function() {
             const email = document.getElementById('email').value;
             const subscribeCheckbox = document.getElementById('subscribe');
             
+            // Validate email
+            if (!email || !email.includes('@')) {
+                alert('Please enter a valid email address.');
+                return;
+            }
+            
             // Validate checkbox
             if (!subscribeCheckbox.checked) {
                 alert('Please check the subscription box to proceed.');
@@ -357,12 +371,15 @@ document.addEventListener('DOMContentLoaded', function() {
             submitBtn.textContent = 'SUBSCRIBING...';
             submitBtn.disabled = true;
 
+            // Updated EmailJS send with correct parameters
             emailjs.send('service_jx551wv', 'template_orovyp5', {
+                to_email: 'contact@zemyst.com', // Where you want to receive the subscription
                 user_email: email,
                 from_name: 'Zemyst Newsletter',
-                message: 'New newsletter subscription request'
+                message: `New newsletter subscription from: ${email}`
             })
-            .then(() => {
+            .then((response) => {
+                console.log('EmailJS success:', response);
                 alert('Thank you for subscribing to our newsletter!');
                 // Reset form
                 document.getElementById('email').value = '';
@@ -370,7 +387,16 @@ document.addEventListener('DOMContentLoaded', function() {
             })
             .catch((error) => {
                 console.error('EmailJS error:', error);
-                alert('Failed to subscribe. Please try again.');
+                
+                // Better error handling
+                let errorMessage = 'Failed to subscribe. Please try again.';
+                if (error.status === 404) {
+                    errorMessage = 'Email service configuration error. Please contact support.';
+                } else if (error.status === 400) {
+                    errorMessage = 'Invalid email format. Please check your email address.';
+                }
+                
+                alert(errorMessage);
             })
             .finally(() => {
                 // Reset button
@@ -380,6 +406,43 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
+    // Rest of your existing code...
+});
+
+// Alternative: Simple fallback without EmailJS
+function fallbackSubscription() {
+    const newsletterForm = document.querySelector('.newsletter-form');
+    if (newsletterForm) {
+        newsletterForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('email').value;
+            const subscribeCheckbox = document.getElementById('subscribe');
+            
+            if (!email || !email.includes('@')) {
+                alert('Please enter a valid email address.');
+                return;
+            }
+            
+            if (!subscribeCheckbox.checked) {
+                alert('Please check the subscription box to proceed.');
+                return;
+            }
+            
+            // Simple mailto fallback
+            const subject = encodeURIComponent('Newsletter Subscription');
+            const body = encodeURIComponent(`New newsletter subscription request from: ${email}`);
+            window.location.href = `mailto:contact@zemyst.com?subject=${subject}&body=${body}`;
+            
+            alert('Thank you! Please send the email that just opened to complete your subscription.');
+            
+            // Reset form
+            document.getElementById('email').value = '';
+            subscribeCheckbox.checked = false;
+        });
+    }
+}
+
     // Show/hide products functionality
     const viewToggleBtn = document.getElementById('viewToggleBtn');
     const btnText = document.getElementById('btnText');
@@ -466,7 +529,6 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     }
-});
 
 // Fixed initializeReadMore function
 function initializeReadMore(sectionSelector = '') {
