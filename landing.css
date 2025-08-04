@@ -2,17 +2,18 @@ body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             line-height: 1.6;
         }
+        
         .rotate-on-scroll {
-        opacity: 0;
-        transform: rotateY(90deg);
-        transform-origin: left;
-        transition: transform 0.8s ease, opacity 0.8s ease;
-        will-change: transform, opacity;
+            opacity: 0;
+            transform: rotateY(90deg);
+            transform-origin: left;
+            transition: transform 0.8s ease, opacity 0.8s ease;
+            will-change: transform, opacity;
         }
 
         .rotate-on-scroll.visible {
-        opacity: 1;
-        transform: rotateY(0deg);
+            opacity: 1;
+            transform: rotateY(0deg);
         }
 
         /* Navbar Styles */
@@ -61,6 +62,20 @@ body {
             color: black !important;
         }
         
+        /* Custom navbar toggler for mobile */
+        .navbar-toggler {
+            border: none;
+            padding: 4px 8px;
+        }
+        
+        .navbar-toggler:focus {
+            box-shadow: none;
+        }
+        
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='m4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+        
         /* Hero Section */
         .hero-section {
             min-height: 100vh;
@@ -70,12 +85,13 @@ body {
             background-size: cover;
             background-position: center;
             overflow: hidden;
+            display: flex;
+            align-items: center;
         }
         
         .hero-content {
             position: relative;
             z-index: 2;
-            text-align: justify;
         }
         
         .hero-title {
@@ -116,35 +132,52 @@ body {
             margin-bottom: 3rem;
         }
         
+        /* About Intro Section */
+        #about-intro {
+            min-height: 160vh;
+            background: #000;
+            overflow: hidden;
+        }
+        
+        .about-intro-bg {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 700px;
+            height: 700px;
+            background: url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80') no-repeat center bottom;
+            background-size: cover;
+        }
+        
         /* Why Zemyst Section */
         .traveling-line {
-        position: absolute;
-        top: 0;
-        left: -50%;
-        width: 200%;
-        height: 100%;
-        background: linear-gradient(
-            90deg,
-            transparent 0%,
-            rgba(255, 255, 255, 0.7) 50%,
-            transparent 100%
-        );
-        animation: shine-move 2.5s linear infinite;
+            position: absolute;
+            top: 0;
+            left: -50%;
+            width: 200%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                transparent 0%,
+                rgba(255, 255, 255, 0.7) 50%,
+                transparent 100%
+            );
+            animation: shine-move 2.5s linear infinite;
         }
 
         @keyframes shine-move {
-        from {
-            left: -50%;
-        }
-        to {
-            left: 100%;
-        }
+            from {
+                left: -50%;
+            }
+            to {
+                left: 100%;
+            }
         }
 
         .why-section {
             background: #000;
             color: white;
-            padding: 15rem 0;
+            padding: 8rem 0;
             position: relative;
         }
         
@@ -158,7 +191,6 @@ body {
             font-size: 1.1rem;
             line-height: 1.8;
             max-width: 600px;
-            margin-left: auto;
             margin-bottom: 2rem;
         }
         
@@ -270,18 +302,218 @@ body {
             margin-bottom: 0.5rem;
         }
         
-        /* Responsive */
-        @media (max-width: 768px) {
+        /* Mobile Responsive Styles */
+        @media (max-width: 1200px) {
+            .about-intro-bg {
+                width: 500px;
+                height: 500px;
+            }
+        }
+        
+        @media (max-width: 992px) {
             .hero-title {
-                font-size: 3rem;
+                font-size: 3.5rem;
             }
             
             .section-title {
+                font-size: 2.5rem;
+            }
+            
+            .why-title {
+                font-size: 2.5rem;
+            }
+            
+            .newsletter-title {
                 font-size: 2rem;
+            }
+            
+            .about-intro-bg {
+                width: 400px;
+                height: 400px;
+            }
+            
+            .why-description {
+                margin-left: 0;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            /* Hero Section Mobile */
+            .hero-title {
+                font-size: 2.8rem;
+                margin-bottom: 1.5rem;
+                text-align: center;
+            }
+            
+            .hero-subtitle {
+                font-size: 0.9rem;
+                letter-spacing: 1px;
+                text-align: center;
+            }
+            
+            .hero-content {
+                text-align: center;
+            }
+            
+            /* Section Titles Mobile */
+            .section-title {
+                font-size: 2rem;
+                text-align: center;
             }
             
             .why-title {
                 font-size: 2rem;
+                text-align: center;
+                margin-bottom: 2rem;
+            }
+            
+            .newsletter-title {
+                font-size: 1.8rem;
+                line-height: 1.3;
+            }
+            
+            /* Sections Padding Mobile */
+            .products-section {
+                padding: 3rem 0;
+            }
+            
+            .why-section {
+                padding: 5rem 0;
+            }
+            
+            .newsletter-section {
+                padding: 3rem 0;
+            }
+            
+            /* About Intro Mobile */
+            #about-intro {
+                min-height: auto;
+                padding: 3rem 0;
+            }
+            
+            .about-intro-bg {
+                display: none;
+            }
+            
+            /* Why Section Mobile */
+            .why-description {
+                font-size: 1rem;
+                text-align: left;
+            }
+            
+            /* Footer Mobile */
+            .footer-section {
+                padding: 2rem 0 1rem;
+            }
+            
+            .footer-column {
+                margin-bottom: 2rem;
+            }
+            
+            /* Navbar Mobile */
+            .navbar-nav {
+                text-align: center;
+                padding: 1rem 0;
+            }
+            
+            .navbar-nav .nav-item {
+                margin: 0.5rem 0;
+            }
+            
+            .contact-btn {
+                margin-top: 1rem;
+                display: inline-block;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            /* Extra Small Devices */
+            .hero-title {
+                font-size: 2.2rem;
+                line-height: 1.2;
+            }
+            
+            .hero-subtitle {
+                font-size: 0.8rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+                line-height: 1.3;
+            }
+            
+            .why-title {
+                font-size: 1.8rem;
+                line-height: 1.3;
+            }
+            
+            .newsletter-title {
+                font-size: 1.5rem;
+                line-height: 1.4;
+            }
+            
+            .why-description {
+                font-size: 0.95rem;
+            }
+            
+            /* Container Padding */
+            .container {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+            
+            /* Form Mobile */
+            .subscribe-btn {
+                padding: 0.8rem 2rem;
+                font-size: 0.9rem;
+            }
+            
+            .form-control {
+                font-size: 0.9rem;
+            }
+            
+            /* Footer Mobile */
+            .footer-brand {
+                font-size: 1.3rem;
+            }
+            
+            .footer-column h6 {
+                font-size: 0.8rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            /* Very Small Devices */
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 1.6rem;
+            }
+            
+            .why-title {
+                font-size: 1.6rem;
+            }
+            
+            .newsletter-title {
+                font-size: 1.4rem;
+            }
+        }
+        
+        /* Landscape Mobile Orientation */
+        @media (max-height: 500px) and (orientation: landscape) {
+            .hero-section {
+                min-height: 100vh;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+                margin-bottom: 1rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 0.8rem;
             }
         }
         
@@ -294,4 +526,15 @@ body {
         @keyframes blink {
             0%, 50% { border-color: white; }
             51%, 100% { border-color: transparent; }
+        }
+        
+        /* Touch Improvements */
+        @media (hover: none) and (pointer: coarse) {
+            .nav-link:hover,
+            .contact-btn:hover,
+            .read-more-btn:hover,
+            .subscribe-btn:hover,
+            .footer-column ul li a:hover {
+                opacity: 0.8;
+            }
         }
